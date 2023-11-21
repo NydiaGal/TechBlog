@@ -4,5 +4,14 @@ module.exports = {
 
       return date.toLocaleTimeString();
     },
-  };
-  
+    format_date: (timestamp) => {
+
+        const date = new Date(timestamp);
+    
+     
+        date.setFullYear(date.getFullYear());
+    
+        const options = { month: 'numeric', day: 'numeric', year: 'numeric' };
+        return date.toLocaleDateString(undefined, options);
+      }
+    };
