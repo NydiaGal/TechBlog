@@ -1,7 +1,5 @@
 # TechBlog
 
-# 14 Model-View-Controller (MVC): Tech Blog
-
 ## Your Task
 
 1. Build a CMS-style blog site that can publish blog posts, articles and comments
