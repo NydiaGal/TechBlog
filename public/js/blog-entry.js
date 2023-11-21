@@ -9,9 +9,10 @@ async function newFormHandler(event) {
     const response = await fetch(`/api/entry`, {
       method: 'POST',
       body: JSON.stringify({
-        blog_entry,
+        blog_title,
         blog_comments,
         guest,
+        date,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +22,7 @@ async function newFormHandler(event) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to add blog entry');
+      alert('Blog entry was not successfully added.');
     }
   }
   
