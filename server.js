@@ -6,11 +6,11 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
+const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers: helpersMethods});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
