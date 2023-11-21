@@ -8,7 +8,6 @@ module.exports = {
 
         const date = new Date(timestamp);
     
-     
         date.setFullYear(date.getFullYear());
     
         const options = { month: 'numeric', day: 'numeric', year: 'numeric' };
