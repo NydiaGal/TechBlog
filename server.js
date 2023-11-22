@@ -12,12 +12,15 @@ const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {
       maxAge: 15 * 60 * 1000,
+      httpOnly: true,
+      resave: false,
+      secure: true,
+      sameSite: 'strict'
     },
     httpOnly: true,
     resave: false,
     secure: true,
     saveUninitialized: true,
-    sameSite: 'strict'
     store: new SequelizeStore({
       db: sequelize,
     })
