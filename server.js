@@ -2,18 +2,20 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {
-      maxAge: 15 * 60 * 1000,
+      maxAge: 10 * 60 * 1000,
       httpOnly: true,
-      resave: false,
+      resave: true,
       secure: true,
       sameSite: 'strict'
     },
@@ -29,8 +31,6 @@ const sess = {
 app.use(session(sess));
 
 const helpers = require('./utils/helpers');
-
-const sequelize = require('./config/connection');
 
 const hbs = exphbs.create({helpers: helpersMethods});
 

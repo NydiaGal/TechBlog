@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const entry = require('../../models/Dish');
+const entry = require('../../models/users');
 
 router.post('/', async (req, res) => {
   try { 
